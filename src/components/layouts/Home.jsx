@@ -20,7 +20,7 @@ const Home = () => {
                 <li >{img.d3}</li>
                 <li >{img.d4}</li>
               </ul>
-              <Link to={''}>{img.link}</Link>
+              <Link to={'/primera'}>{img.link}</Link>
             </div>
           ))
         }

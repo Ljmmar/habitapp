@@ -6,7 +6,7 @@ const galeria = [
       d2: '2 Bathrooms',
       d3: '200 mts',
       d4: 'Sabaneta, Cra 1234',
-      link: '/primera',
+      link: 'Learn more',
     },
     {
       nombre: "Apartament",
