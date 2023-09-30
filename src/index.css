@@ -11,6 +11,15 @@ header {
   max-width: 60px;
 }
 
+.searchh{
+margin-left: 50%;
+}
+
+.searchh input{
+border-radius: 5px;
+height: 15dp;
+}
+
 .footer-icon img {
   max-width: 30px;
 }
