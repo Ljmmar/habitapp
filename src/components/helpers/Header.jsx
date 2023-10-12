@@ -15,10 +15,7 @@ const Header = () => {
                 <Link to={'/projects'}>Projects</Link>
                 <Link to={'/onsale'}>On sale</Link>
             </div>
-            <div className="searchh">
-                <input type="text"  placeholder="Search"/>
-                <span class="icono">&#128269;</span>
-            </div>
+      
         </header>
     )
 }
