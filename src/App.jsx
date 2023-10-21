@@ -4,6 +4,7 @@ import Contact from './components/layouts/Contact'
 import Projects from './components/layouts/Projects'
 import Onsale from './components/layouts/Onsale'
 import Primera from './components/cards/Primera'
+import Admin from './components/layouts/Admin'
 
 let router= createBrowserRouter([
   {
@@ -26,6 +27,10 @@ let router= createBrowserRouter([
     path:'/primera',
     element: <Primera/>
   },  
+  {
+    path:'/admin',
+    element: <Admin/>
+  },
 ])
 
 function App() {

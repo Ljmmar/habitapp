@@ -1,7 +1,7 @@
 header {
   display: flex;
   align-items: center;
-  background-color: #5a5858;
+  background-color: #439158;
   padding: 8px 16px;
   color: #fff;
   border-radius: 10px;
@@ -57,7 +57,7 @@ height: 15dp;
 
 
 .search-bar button {
-  background-color: rgb(136, 36, 36);
+  background-color: #439158;
   color: #fff;
   border-radius: 5px;
   padding: 7px 15px;
@@ -68,13 +68,12 @@ height: 15dp;
 
 
 body {
-  background-color: rgb(190, 187, 181);
-  color: #fff;
+  background-color: #fff; 
 }
 
 footer {
-  background-color: #6d6a6a;
-  color: #fff;
+  background-color: #fff;
+  color: black;
   padding: 50px 0;
   text-align: center;
   height: 20px;
@@ -126,7 +125,7 @@ footer {
 .cards {
   width: 400px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #bad4c0;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -141,4 +140,45 @@ footer {
   margin-right: 20px;
   font-size: large;
   color: black;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  margin-left: 43%; 
+}
+
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-container button {
+  background-color: #439158;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin-left: 100dp; 
+  margin:  50px;
+
 }
