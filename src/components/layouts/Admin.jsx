@@ -1,10 +1,12 @@
+import Headeradmin from "../helpers/Headeradmin"
 import Login from "./Login"
 
 
 const Admin = () => {
   return (
     <div>
-        <form action=""></form>
+      <Headeradmin />
+
     </div>
   )
 }
