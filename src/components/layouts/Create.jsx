@@ -28,7 +28,7 @@ const addPropiedad = async () =>{
         <input onChange={(e)=> setTipoPropiedad(e.target.value)} placeholder="Tipo de propiedad" type="text" />
         <input onChange={(e)=> setUbicaccionPropiedad(e.target.value)} placeholder="Ubicacion propiedad" type="text" />
         <input onChange={(e)=> setValorPropiedad(e.target.value)} placeholder="Valor propiedad" type="text" />
-        <input onChange={(e)=> setimagenPropiedad(e.target.value)} placeholder="url de la imagen" type="file" />
+        <input onChange={(e)=> setimagenPropiedad(e.target.value)} placeholder="url de la imagen" type="text" />
         <button onClick={addPropiedad} type="button">Agregar Propiedad</button>
       </form>
     </section>
