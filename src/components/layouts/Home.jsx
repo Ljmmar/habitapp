@@ -1,30 +1,57 @@
 import Header from "../helpers/Header"
-import { galeria } from "../config/database"
+
 import Footer from "../helpers/Footer"
 import Search from "../helpers/Search"
-import { Link } from "react-router-dom"
+
+
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
+import { dataBase } from "../database/config-firebase";
+import { useEffect, useState } from 'react';
+
 const Home = () => {
+  const [propiedades, setPropiedades] = useState([])
+
+  const getPropiedades = async () => {
+    const propiedadesCollection = collection(dataBase, 'propiedades')
+    const data = await getDocs(propiedadesCollection)
+
+    setPropiedades(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+
+  };
+
+
+  const deletePropiedades = async (id) => {
+    let propiedadEliminar = doc(dataBase, "propiedades", id)
+    await deleteDoc(propiedadEliminar)
+    getPropiedades()
+
+  }
+
+  useEffect(() => {
+
+    getPropiedades()
+  }, [])
+
   return (
     <section>
       <Header />
       <Search />
+
+
       <section className="galeria">
-        {
-          galeria.map((img) => (
-            <div className="cards">
-              <img className="imagenes" src={img.img} alt="" />
-              <h1>{img.nombre}</h1>
-              <ul>
-                <li >{img.d1}</li>
-                <li >{img.d2}</li>
-                <li >{img.d3}</li>
-                <li >{img.d4}</li>
-              </ul>
-              <Link to={'/primera'}>{img.link}</Link>
-            </div>
-          ))
+        {propiedades.map((propiedad) => (
+
+          <section className="cards" key={propiedad.id}>
+            <img className="imagenes" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
+            <p>{propiedad.tipoPropiedad}</p>
+            <p>{propiedad.ubicacionPropiedad}</p>
+            <p>{propiedad.valorPropiedad}</p>
+
+          </section>
+        ))
         }
       </section>
+
       <Footer />
     </section>
   )

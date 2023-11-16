@@ -3,10 +3,10 @@ import Home from './components/layouts/Home'
 import Contact from './components/layouts/Contact'
 import Projects from './components/layouts/Projects'
 import Onsale from './components/layouts/Onsale'
-import Primera from './components/cards/Primera'
 import Admin from './components/layouts/Admin'
 import Create from './components/layouts/Create'
 import List from './components/layouts/List'
+import Login from './components/layouts/Login'
 
 let router = createBrowserRouter([
   {
@@ -25,10 +25,7 @@ let router = createBrowserRouter([
     path: '/onsale',
     element: <Onsale />
   },
-  {
-    path: '/primera',
-    element: <Primera />
-  },
+
   {
     path: '/admin',
     element: <Admin />
@@ -41,7 +38,10 @@ let router = createBrowserRouter([
     path: '/list',
     element: <List />
   },
-
+  {
+    path: '/login',
+    element: <Login/>
+  },
 
 ])
 

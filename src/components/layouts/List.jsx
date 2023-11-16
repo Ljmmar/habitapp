@@ -32,8 +32,7 @@ const List = () => {
         <section>
             <Headeradmin />
             <section>
-                {
-                    propiedades.map((propiedad) => (
+                {propiedades.map((propiedad) => (
                         <section key={propiedad.id}>
                             <img src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
                             <p>{propiedad.tipoPropiedad}</p>
