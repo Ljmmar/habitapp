@@ -7,6 +7,7 @@ import Admin from './components/layouts/Admin'
 import Create from './components/layouts/Create'
 import List from './components/layouts/List'
 import Login from './components/layouts/Login'
+import { Edit } from './components/layouts/Edit'
 
 let router = createBrowserRouter([
   {
@@ -42,7 +43,10 @@ let router = createBrowserRouter([
     path: '/login',
     element: <Login/>
   },
-
+  {
+    path: '/edit/:id',
+    element: <Edit/>
+  }
 ])
 
 function App() {

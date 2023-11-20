@@ -31,19 +31,20 @@ const List = () => {
     return (
         <section>
             <Headeradmin />
-            <section>
+            <section className="galeria">
                 {propiedades.map((propiedad) => (
-                        <section key={propiedad.id}>
-                            <img src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
-                            <p>{propiedad.tipoPropiedad}</p>
-                            <p>{propiedad.ubicacionPropiedad}</p>
-                            <p>{propiedad.valorPropiedad}</p>
-                            <section>
-                                <button onClick={() => { deletePropiedades(propiedad.id) }} type='buttom'>Eliminar</button>
-                                <button type='buttom'><Link to={'/editar-propiedad/' + propiedad.id}>Editar</Link></button>
-                            </section>
+
+                    <section className="cards" key={propiedad.id}>
+                        <img className="imagenes" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
+                        <p>{propiedad.tipoPropiedad}</p>
+                        <p>{propiedad.ubicacionPropiedad}</p>
+                        <p>{propiedad.valorPropiedad}</p>
+                        <section>
+                            <button onClick={() => { deletePropiedades(propiedad.id) }} type='buttom'>Eliminar</button>
+                            <button type='buttom'><Link to={'/edit/' + propiedad.id}>Editar</Link></button>
                         </section>
-                    ))
+                    </section>
+                ))
                 }
             </section>
         </section>

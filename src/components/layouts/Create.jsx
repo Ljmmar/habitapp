@@ -40,15 +40,14 @@ const Create = () => {
   };
 
   return (
-    <section>
+    <section className="create-section">
       <Headeradmin />
-      <form>
-        <input onChange={(e) => setTipoPropiedad(e.target.value)} placeholder="Tipo de propiedad" type="text" />
-        <input onChange={(e) => setUbicaccionPropiedad(e.target.value)} placeholder="Ubicacion propiedad" type="text" />
-        <input onChange={(e) => setValorPropiedad(e.target.value)} placeholder="Valor propiedad" type="text" />
-
-        <input onChange={(e) => setimagenPropiedad(e.target.files[0])} type="file" />
-        <button onClick={addPropiedad} type="button">Agregar Propiedad</button>
+      <form className="create-form">
+        <input onChange={(e) => setTipoPropiedad(e.target.value)} placeholder="Tipo de propiedad" type="text"/>
+        <input onChange={(e) => setUbicaccionPropiedad(e.target.value)} placeholder="Ubicacion propiedad" type="text"/>
+        <input onChange={(e) => setValorPropiedad(e.target.value)} placeholder="Valor propiedad" type="text"/>
+        <input onChange={(e) => setimagenPropiedad(e.target.files[0])} type="file"/>
+        <button onClick={addPropiedad} type="button"> Agregar Propiedad  </button>
       </form>
     </section>
   );
