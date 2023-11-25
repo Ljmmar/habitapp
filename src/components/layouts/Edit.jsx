@@ -6,6 +6,7 @@ import Headeradmin from "../helpers/Headeradmin";
 
 
 export const Edit = () => {
+
     const [tipoPropiedad, setTipoPropiedad] = useState('');
     const [ubicacionPropiedad, setUbicaccionPropiedad] = useState('');
     const [valorPropiedad, setValorPropiedad] = useState('');
@@ -15,7 +16,7 @@ export const Edit = () => {
     let { id } = useParams();
 
     const updatePropiedad = async () => {
-        let propiedadCollection = getDoc(doc(dataBase, "propiedades", id))
+        let propiedadCollection = (doc(dataBase, "propiedades", id))
         let propiedadNueva = {
             tipoPropiedad,
             ubicacionPropiedad,
@@ -25,7 +26,7 @@ export const Edit = () => {
         List('/list')
     }
 
-    const getPropiedades = async () => {
+    const getPropiedades = async (id) => {
         let propiedadCollection = await getDoc(doc(dataBase, "propiedades", id))
         let data = propiedadCollection.data();
 
