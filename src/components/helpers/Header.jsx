@@ -6,8 +6,7 @@ const Header = () => {
             <div className="logo">
                 <Link to={'/'}> <img src='./public/icons/logoH.png' alt="Logo" /></Link>
             </div>
-        <header className="he">
-            
+        <header > 
             <div className='options'>
                 <Link to={'/contact'}>Contact</Link>
                 <Link to={'/projects'}>Projects</Link>
