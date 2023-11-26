@@ -8,6 +8,7 @@ import Create from './components/layouts/Create'
 import List from './components/layouts/List'
 import Login from './components/layouts/Login'
 import { Edit } from './components/layouts/Edit'
+import { Details } from './components/layouts/Details'
 
 let router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ let router = createBrowserRouter([
   {
     path: '/edit/:id',
     element: <Edit/>
+  },
+  {
+    path: '/details/:id',
+    element: <Details/>
   }
 ])
 

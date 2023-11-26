@@ -177,3 +177,33 @@ button {
 button:hover {
   background-color: #439158;
 }
+
+.details-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 80px;
+  color: black;
+  margin: 3%;
+  padding: 20px;
+  background-color: #bad4c0;
+  border-radius: 10 px;
+}
+.property-image{
+  max-width: 700px; 
+}
+
+.property-details {
+  display: flex;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.customer-details {
+  background-color: #eff3f0;
+  flex: 1;
+}
+
+.customer-details form{
+  padding: 50px;
+}
