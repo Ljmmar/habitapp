@@ -51,6 +51,7 @@ export const Details = () => {
                     </ul> 
                     <ul>
                         <p> {tipoPropiedad}</p>
+                        <p>Valor; {valorPropiedad}</p>
                         <p>Locacion: {ubicacionPropiedad}</p>
                         <p>Habitaciones: {habitacionesPropiedad}</p>
                         <p>Baños: {banosPropiedad}</p>

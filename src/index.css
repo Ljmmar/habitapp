@@ -1,13 +1,13 @@
 header {
   display: flex;
   align-items: center;
-  background-color: #439158;                                        
+  background-color: #439158;
   color: #fff;
   border-radius: 10px;
 }
 
 .logo img {
-  max-width: 100px; 
+  max-width: 100px;
 }
 
 
@@ -57,7 +57,7 @@ header {
 
 
 body {
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 footer {
@@ -85,7 +85,7 @@ footer {
 }
 
 .imagenes {
-  max-width : 400px;
+  max-width: 400px;
   object-fit: cover;
 }
 
@@ -105,7 +105,7 @@ footer {
   padding: 20px;
   background-color: #bad4c0;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px   rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -117,7 +117,7 @@ footer {
   width: 400px;
   height: 200px;
   text-align: center;
-  margin-left: 43%; 
+  margin-left: 43%;
 }
 
 
@@ -145,26 +145,31 @@ footer {
 
 .admin-container {
   max-width: 1200px;
-  margin-left: 100dp; 
-  margin:  50px;
+  margin-left: 100dp;
+  margin: 50px;
 
 }
 
 .create-section {
   padding: 20px;
+  display: flex;
 }
 
 .create-form {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  width: 300px;
   margin: 0 auto;
+}
+
+.create-form textarea {
+  height: 60px;
 }
 
 input {
   margin-bottom: 10px;
   padding: 5px;
-    
+
 }
 
 button {
@@ -189,8 +194,9 @@ button:hover {
   background-color: #bad4c0;
   border-radius: 10 px;
 }
-.property-image{
-  max-width: 700px; 
+
+.property-image {
+  max-width: 700px;
 }
 
 .property-details {
@@ -204,6 +210,14 @@ button:hover {
   flex: 1;
 }
 
-.customer-details form{
+.customer-details form {
+ 
   padding: 50px;
+}
+.customer-details input{
+  width: 60%;
+}
+.customer-details textarea {
+  height: 100px;
+  width: 65%;
 }
