@@ -1,10 +1,9 @@
 import { dataBase } from "../database/config-firebase";
-import { collection, doc, getDoc } from "firebase/firestore";
+import { collection, doc, getDoc, addDoc } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Header from "../helpers/Header"
 import Footer from "../helpers/Footer"
-
 
 
 export const Details = () => {
@@ -16,11 +15,13 @@ export const Details = () => {
     const [banosPropiedad, setBanosPropiedad] = useState('');
     const [parqueaderoPropiedad, setParqueaderoPropiedad] = useState('');
     const [descripcionPropiedad, setDescripcionPropiedad] = useState('');
-
+    /////
+    const [nombrecliente, setNombrecliente] = useState('');
+    const [numerocliente, setNumerocliente] = useState('');
+    const [correocliente, setCorreocliente] = useState('');
+    const [mensajecliente, setMensajecliente] = useState('');
 
     let { id } = useParams();
-
-
 
     const getPropiedades = async (id) => {
         let propiedadCollection = await getDoc(doc(dataBase, "propiedades", id))
@@ -35,10 +36,21 @@ export const Details = () => {
         setDescripcionPropiedad(data.descripcionPropiedad)
 
     }
-    useEffect(() => {
-        getPropiedades(id)
-    }, [id])
+    useEffect(() => { getPropiedades(id) }, [id])
 
+    ////////////
+    const addcustomerdata = async () => {
+        const customerCollection = collection(dataBase, 'clientes');
+        const clientenuevo = {
+            nombrecliente,
+            numerocliente,
+            correocliente,
+            mensajecliente
+        };
+        await addDoc(customerCollection, clientenuevo);
+        alert('Propiedad ingresada correctamente');
+s 
+    };
 
     return (
         <section className="details-section">
@@ -46,34 +58,34 @@ export const Details = () => {
             <div className="details-container">
                 <div className="property-details">
                     <ul>
-                    <img className="property-image" src={imagenPropiedad} alt={tipoPropiedad} />
-                    <p>{descripcionPropiedad}</p>
-                    </ul> 
+                        <img className="property-image" src={imagenPropiedad} alt={tipoPropiedad} />
+                        <p>{descripcionPropiedad}</p>
+                    </ul>
                     <ul>
                         <p> {tipoPropiedad}</p>
                         <p>Valor; {valorPropiedad}</p>
                         <p>Locacion: {ubicacionPropiedad}</p>
                         <p>Habitaciones: {habitacionesPropiedad}</p>
                         <p>Baños: {banosPropiedad}</p>
-                        <p>Parqueaderos: {parqueaderoPropiedad}</p>            
-                    </ul>        
+                        <p>Parqueaderos: {parqueaderoPropiedad}</p>
+                    </ul>
                 </div>
                 <div className="customer-details">
                     <form className="customer-form">
-                        <input type="text" name="nombre" placeholder="Nombre" />
+                        <input onChange={(e) => setNombrecliente(e.target.value)} type="text" placeholder="Nombre" />
                         <br />
-                        <input type="tel" name="celular" placeholder="Celular" />
+                        <input onChange={(e) => setNumerocliente(e.target.value)} type="text" placeholder="Celular" />
                         <br />
-                        <input type="email" name="correo" placeholder="Correo" />
+                        <input onChange={(e) => setCorreocliente(e.target.value)} type="email" placeholder="Correo" />
                         <br />
-                        <textarea name="mensaje" placeholder="Dejanos un mensaje"></textarea>
+                        <textarea onChange={(e) => setMensajecliente(e.target.value)} placeholder="Dejanos un mensaje"></textarea>
                         <br />
-                        <button type="submit">Enviar</button>
+                        <button onClick={addcustomerdata} type="button">Enviar</button>
                     </form>
                 </div>
             </div>
- 
-            <Footer />     
+
+            <Footer />
         </section>
     );
 };
