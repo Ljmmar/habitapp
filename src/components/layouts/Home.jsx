@@ -30,8 +30,6 @@ const Home = () => {
     <section>
       <Header />
       <Search />
-
-
       <section className="galeria">
         {propiedades.map((propiedad) => (
 

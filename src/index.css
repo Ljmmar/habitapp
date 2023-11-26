@@ -1,13 +1,30 @@
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-color: #439158;
+  padding: 10px 20px;
+  background-color: #244f30;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
+  width: 100%;
+  height: 30px;
+}
+
+.headerr {
+  display: flex;
+  background-color: #fff
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background-color: #fff
 }
 
 .logo img {
-  max-width: 100px;
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
 }
 
 
@@ -20,6 +37,7 @@ header {
   text-decoration: none;
   color: #fff;
   font-size: 20px;
+  margin-right: 20px;
 }
 
 .options :hover {
@@ -29,13 +47,14 @@ header {
 .search-bar {
   display: flex;
   align-items: center;
-  margin: 30px;
   margin-left: 31%;
+  width: 80%;
   height: 100px;
   width: 40%;
   border-radius: 10px;
   padding: 5px;
 }
+
 
 .search-bar select {
   flex-grow: 1;
@@ -90,12 +109,11 @@ footer {
 }
 
 .galeria {
-  margin-top: 100px;
   margin-bottom: 100px;
   display: grid;
   flex-direction: row;
   gap: 30px;
-  color: black;
+
   margin: 3%;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -106,6 +124,12 @@ footer {
   background-color: #bad4c0;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cards button {
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
 }
 
 
@@ -211,12 +235,14 @@ button:hover {
 }
 
 .customer-details form {
- 
+
   padding: 50px;
 }
-.customer-details input{
+
+.customer-details input {
   width: 60%;
 }
+
 .customer-details textarea {
   height: 100px;
   width: 65%;
