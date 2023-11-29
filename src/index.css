@@ -247,3 +247,12 @@ button:hover {
   height: 100px;
   width: 65%;
 }
+
+
+.busqueda{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 3rem;
+  color: black;
+}

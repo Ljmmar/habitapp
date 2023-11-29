@@ -25,7 +25,7 @@ const Login = () => {
       <div className="login-container">
         <h1>Login</h1>
         <form action="#" method='post'>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Username' />
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Usuario' />
           <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='contraseña' />
           <button onClick={handleLogin}>Iniciar sesión</button >
         </form>

@@ -15,11 +15,6 @@ const Home = () => {
     setPropiedades(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   };
 
-  const deletePropiedades = async (id) => {
-    let propiedadEliminar = doc(dataBase, "propiedades", id)
-    await deleteDoc(propiedadEliminar)
-    getPropiedades()
-  }
 
   useEffect(() => {
 
@@ -36,6 +31,7 @@ const Home = () => {
           <section className="cards" key={propiedad.id}>
 
             <Link to={'/details/' + propiedad.id}> <img className="imagenes" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} /></Link>
+            <p>Codigo de propiedad: {propiedad.codigoPropiedad}</p>
             <ul>
               <li>
                 {propiedad.tipoPropiedad}

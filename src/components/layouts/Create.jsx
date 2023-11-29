@@ -15,6 +15,7 @@ const Create = () => {
   const [banosPropiedad, setBanosPropiedad] = useState('');
   const [parqueaderoPropiedad, setParqueaderoPropiedad] = useState('');
   const [descripcionPropiedad, setDescripcionPropiedad] = useState('');
+  const [codigoPropiedad, setCodigopropiedad] = useState('')
 
 
   const List = useNavigate();
@@ -37,7 +38,8 @@ const Create = () => {
       habitacionesPropiedad,
       banosPropiedad,
       parqueaderoPropiedad,
-      descripcionPropiedad
+      descripcionPropiedad,
+      codigoPropiedad
     };
 
     await addDoc(propiedadCollection, propiedadNueva);
@@ -47,21 +49,22 @@ const Create = () => {
 
   return (
     <div>
-        <Headeradmin />
-    <section className="create-section">
-    
-      <form className="create-form">
-        <input onChange={(e) => setTipoPropiedad(e.target.value)} placeholder="Tipo de propiedad" type="text" />
-        <input onChange={(e) => setUbicaccionPropiedad(e.target.value)} placeholder="Ubicacion propiedad" type="text" />
-        <input onChange={(e) => setValorPropiedad(e.target.value)} placeholder="Valor de la propiedad" type="text" />
-        <input onChange={(e) => sethabitacionesPropiedad(e.target.value)} placeholder="Habitaciones" type="text" />
-        <input onChange={(e) => setBanosPropiedad(e.target.value)} placeholder="Baños" type="text" />
-        <input onChange={(e) => setParqueaderoPropiedad(e.target.value)} placeholder="Parqueadero" type="text" />
-        <textarea onChange={(e) => setDescripcionPropiedad(e.target.value)} placeholder="Descripcion"/>
-        <input onChange={(e) => setimagenPropiedad(e.target.files[0])} type="file" />
-        <button onClick={addPropiedad} type="button"> Agregar Propiedad  </button>
-      </form>
-    </section>
+      <Headeradmin />
+      <section className="create-section">
+
+        <form className="create-form">
+          <input onChange={(e) => setCodigopropiedad(e.target.value)} placeholder="Codigo de propiedad" type="text" />
+          <input onChange={(e) => setTipoPropiedad(e.target.value)} placeholder="Tipo de propiedad" type="text" />
+          <input onChange={(e) => setUbicaccionPropiedad(e.target.value)} placeholder="Ubicacion propiedad" type="text" />
+          <input onChange={(e) => setValorPropiedad(e.target.value)} placeholder="Valor de la propiedad" type="text" />
+          <input onChange={(e) => sethabitacionesPropiedad(e.target.value)} placeholder="Habitaciones" type="text" />
+          <input onChange={(e) => setBanosPropiedad(e.target.value)} placeholder="Baños" type="text" />
+          <input onChange={(e) => setParqueaderoPropiedad(e.target.value)} placeholder="Parqueadero" type="text" />
+          <textarea onChange={(e) => setDescripcionPropiedad(e.target.value)} placeholder="Descripcion" />
+          <input onChange={(e) => setimagenPropiedad(e.target.files[0])} type="file" />
+          <button onClick={addPropiedad} type="button"> Agregar Propiedad  </button>
+        </form>
+      </section>
     </div>
   );
 };

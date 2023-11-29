@@ -1,8 +1,9 @@
+import Headeradmin from '../helpers/Headeradmin'
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { dataBase } from "../database/config-firebase";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Headeradmin from '../helpers/Headeradmin'
+
 
 const List = () => {
     const [propiedades, setPropiedades] = useState([])
@@ -33,24 +34,25 @@ const List = () => {
 
                     <section className="cards" key={propiedad.id}>
                         <img className="imagenes" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
+                        <p>Codigo de propiedad: {propiedad.codigoPropiedad}</p>
                         <ul>
                             <li>
                                 {propiedad.tipoPropiedad}
                             </li>
                             <li>
-                              Locacion: {propiedad.ubicacionPropiedad}
+                                Locacion: {propiedad.ubicacionPropiedad}
                             </li>
                             <li>
                                 Valor: {propiedad.valorPropiedad}
                             </li>
                             <li>
-                               Habitaciones: {propiedad.habitacionesPropiedad}
+                                Habitaciones: {propiedad.habitacionesPropiedad}
                             </li>
                             <li>
-                               Baños: {propiedad.banosPropiedad}
+                                Baños: {propiedad.banosPropiedad}
                             </li>
                             <li>
-                               Parqueaderos: {propiedad.parqueaderoPropiedad}
+                                Parqueaderos: {propiedad.parqueaderoPropiedad}
                             </li>
                         </ul>
                         <p>{propiedad.descripcionPropiedad}</p>

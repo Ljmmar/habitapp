@@ -2,7 +2,7 @@ import Headeradmin from "../helpers/Headeradmin"
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { dataBase } from "../database/config-firebase";
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const Admin = () => {
 
@@ -12,6 +12,12 @@ const Admin = () => {
     const customerCollection = collection(dataBase, "clientes")
     const data = await getDocs(customerCollection)
     setCostumers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  }
+
+  const deletesolicitud = async (id) => {
+    let solicitudeliminar = doc(dataBase, "clientes", id)
+    await deleteDoc(solicitudeliminar)
+    getCustomers()
   }
 
   useEffect(() => {
@@ -37,6 +43,7 @@ const Admin = () => {
               <li>
                 {customer.mensajecliente}
               </li>
+              <button onClick={() => { deletesolicitud(customer.id) }} type='buttom'>Eliminar</button>
             </ul>
           </section>
         ))}

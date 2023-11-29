@@ -9,7 +9,7 @@ const Headeradmin = () => {
     <header>
     
       <div className='options'>
-        <Link to='/admin'>Home</Link>
+        <Link to='/admin'>Inicio</Link>
         <Link to='/list'>Listado Propiedades</Link>
         <Link to='/create'>Ingresar Propiedad</Link>
       </div>

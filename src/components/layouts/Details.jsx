@@ -20,6 +20,7 @@ export const Details = () => {
     const [numerocliente, setNumerocliente] = useState('');
     const [correocliente, setCorreocliente] = useState('');
     const [mensajecliente, setMensajecliente] = useState('');
+    const [codigoPropiedad, setCodigopropiedad] = useState('')
 
     let { id } = useParams();
 
@@ -34,6 +35,7 @@ export const Details = () => {
         sethabitacionesPropiedad(data.habitacionesPropiedad)
         setParqueaderoPropiedad(data.parqueaderoPropiedad)
         setDescripcionPropiedad(data.descripcionPropiedad)
+        setCodigopropiedad(data.codigoPropiedad)
 
     }
     useEffect(() => { getPropiedades(id) }, [id])
@@ -45,11 +47,12 @@ export const Details = () => {
             nombrecliente,
             numerocliente,
             correocliente,
-            mensajecliente
+            mensajecliente,
+            codigoPropiedad
         };
         await addDoc(customerCollection, clientenuevo);
         alert('Propiedad ingresada correctamente');
-s 
+
     };
 
     return (
@@ -62,8 +65,9 @@ s
                         <p>{descripcionPropiedad}</p>
                     </ul>
                     <ul>
+                        <p>Codigo de propiedad: {codigoPropiedad}</p>
                         <p> {tipoPropiedad}</p>
-                        <p>Valor; {valorPropiedad}</p>
+                        <p>Valor: {valorPropiedad}</p>
                         <p>Locacion: {ubicacionPropiedad}</p>
                         <p>Habitaciones: {habitacionesPropiedad}</p>
                         <p>Baños: {banosPropiedad}</p>
@@ -77,6 +81,8 @@ s
                         <input onChange={(e) => setNumerocliente(e.target.value)} type="text" placeholder="Celular" />
                         <br />
                         <input onChange={(e) => setCorreocliente(e.target.value)} type="email" placeholder="Correo" />
+                        <br />
+                        <input onChange={(e) => setCodigopropiedad(e.target.value)} type="text" placeholder="Ingresar codigo de propiedad" />
                         <br />
                         <textarea onChange={(e) => setMensajecliente(e.target.value)} placeholder="Dejanos un mensaje"></textarea>
                         <br />

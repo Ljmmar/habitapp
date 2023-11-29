@@ -9,6 +9,7 @@ import List from './components/layouts/List'
 import Login from './components/layouts/Login'
 import { Edit } from './components/layouts/Edit'
 import { Details } from './components/layouts/Details'
+import FilterList from './components/layouts/Filterlist'
 
 let router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ let router = createBrowserRouter([
   {
     path: '/details/:id',
     element: <Details/>
+  },
+  {
+    path: '/filter-list',
+    element: <FilterList/>
   }
 ])
 
