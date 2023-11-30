@@ -1,8 +1,19 @@
+*body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 30px;
   background-color: #244f30;
   color: #fff;
   border-radius: 15px;
@@ -59,6 +70,7 @@ header {
 .search-bar select {
   flex-grow: 1;
   padding: 18px;
+  margin: 5px;
   gap: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -72,6 +84,8 @@ header {
   margin-left: 5px;
   margin-right: 5px;
   cursor: pointer;
+  background-color: #439158;
+  border: solid 1px #244f30;
 }
 
 
@@ -104,22 +118,28 @@ footer {
 }
 
 .imagenes {
-  max-width: 400px;
-  object-fit: cover;
+  max-width: 350px;
+  margin: 5px;
 }
 
 .galeria {
-  margin-bottom: 100px;
-  display: grid;
-  flex-direction: row;
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
 
+  margin-left: 20p;
+  gap: 60px;
   margin: 3%;
-  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+ul {
+  margin-top: 10px;
 }
 
 .cards {
   width: 400px;
+  text-align: left;
+  margin: 1%;
   padding: 20px;
   background-color: #bad4c0;
   border-radius: 10px;
@@ -128,83 +148,119 @@ footer {
 
 .cards button {
   text-decoration: none;
-  border-radius: 5px;
+  background-color: #439158;
+  border-radius: 4px;
   border: none;
+  margin: 3px;
+  font-size: 12px;
+  padding: 5px;
+  width: 40%;
 }
 
 
 .login-container {
   background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 200px;
-  text-align: center;
-  margin-left: 43%;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-container img {
+  display: block;
+  margin: 0 auto 20px;
+  /* Centra la imagen y añade margen en la parte inferior */
 }
 
 
 .login-container form {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 .login-container input {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .login-container button {
-  background-color: #439158;
-  color: #fff;
+  width: 100%;
   padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .admin-container {
-  max-width: 1200px;
-  margin-left: 100dp;
-  margin: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
 
+.img-login {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 .create-section {
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .create-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-.create-form textarea {
-  height: 60px;
-}
-
-input {
-  margin-bottom: 10px;
-  padding: 5px;
-
-}
-
-button {
+.create-form input,
+.create-form textarea,
+.create-form button {
+  width: 100%;
+  margin-bottom: 15px;
   padding: 10px;
-  background-color: #439158;
-  color: #fff;
-  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid 1px;
+  font-size: 12px;
+}
+
+.create-form button {
+  background-color: #4caf50;
+  color: white;
 }
 
 button:hover {
   background-color: #439158;
+  color: white;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1080px) {
+  .create-form {
+    margin-left: 20px;
+  }
 }
 
 .details-container {
@@ -220,7 +276,10 @@ button:hover {
 }
 
 .property-image {
-  max-width: 700px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
 .property-details {
@@ -232,6 +291,7 @@ button:hover {
 .customer-details {
   background-color: #eff3f0;
   flex: 1;
+  justify-content: center;
 }
 
 .customer-details form {
@@ -241,18 +301,30 @@ button:hover {
 
 .customer-details input {
   width: 60%;
+  margin: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  border: solid 1px #244f30;
 }
 
 .customer-details textarea {
   height: 100px;
-  width: 65%;
+  width: 60%;
+  margin: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  border: solid 1px #244f30;
 }
 
-
-.busqueda{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 3rem;
-  color: black;
+.customer-details button {
+  background-color: #4caf50;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 5px;
+  border: solid 1px #244f30;
+  margin: 5px;
+  width: 60%;
+  color: white;
 }

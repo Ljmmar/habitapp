@@ -1,9 +1,10 @@
-import Headeradmin from '../helpers/Headeradmin'
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'
 import { dataBase } from "../database/config-firebase";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
+import Headeradmin from '../helpers/Headeradmin'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const List = () => {
     const [propiedades, setPropiedades] = useState([])
@@ -16,10 +17,30 @@ const List = () => {
 
     };
 
+    
     const deletePropiedades = async (id) => {
-        let propiedadEliminar = doc(dataBase, "propiedades", id)
-        await deleteDoc(propiedadEliminar)
-        getPropiedades()
+        
+        await Swal.fire({
+            title: "Está seguro de eliminar?",
+            text: "Esta acción no se puede revertir!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#439158",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí, eliminar!"
+        }).then(async (result)=>{
+            if (result.isConfirmed){
+                let propiedadEliminar = doc(dataBase, "propiedades", id)
+
+                await deleteDoc(propiedadEliminar)
+                getPropiedades()
+                Swal.fire({
+                    title: "Eliminado!",
+                text: "El registro ha sido borrado.",
+                    icon: "success"
+                })
+            }
+        })         
     }
 
     useEffect(() => {
@@ -33,26 +54,26 @@ const List = () => {
                 {propiedades.map((propiedad) => (
 
                     <section className="cards" key={propiedad.id}>
-                        <img className="imagenes" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
+                        <img class="card-img-top" src={propiedad.imagenPropiedad} alt={propiedad.tipoPropiedad} />
                         <p>Codigo de propiedad: {propiedad.codigoPropiedad}</p>
                         <ul>
                             <li>
                                 {propiedad.tipoPropiedad}
                             </li>
                             <li>
-                                Locacion: {propiedad.ubicacionPropiedad}
+                              Locacion: {propiedad.ubicacionPropiedad}
                             </li>
                             <li>
                                 Valor: {propiedad.valorPropiedad}
                             </li>
                             <li>
-                                Habitaciones: {propiedad.habitacionesPropiedad}
+                               Habitaciones: {propiedad.habitacionesPropiedad}
                             </li>
                             <li>
-                                Baños: {propiedad.banosPropiedad}
+                               Baños: {propiedad.banosPropiedad}
                             </li>
                             <li>
-                                Parqueaderos: {propiedad.parqueaderoPropiedad}
+                               Parqueaderos: {propiedad.parqueaderoPropiedad}
                             </li>
                         </ul>
                         <p>{propiedad.descripcionPropiedad}</p>

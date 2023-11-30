@@ -2,6 +2,7 @@ import { dataBase } from "../database/config-firebase";
 import { collection, doc, getDoc, addDoc } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import Swal from "sweetalert2";
 import Header from "../helpers/Header"
 import Footer from "../helpers/Footer"
 
@@ -15,12 +16,13 @@ export const Details = () => {
     const [banosPropiedad, setBanosPropiedad] = useState('');
     const [parqueaderoPropiedad, setParqueaderoPropiedad] = useState('');
     const [descripcionPropiedad, setDescripcionPropiedad] = useState('');
+    const [codigoPropiedad, setCodigopropiedad] = useState('')
     /////
     const [nombrecliente, setNombrecliente] = useState('');
     const [numerocliente, setNumerocliente] = useState('');
     const [correocliente, setCorreocliente] = useState('');
     const [mensajecliente, setMensajecliente] = useState('');
-    const [codigoPropiedad, setCodigopropiedad] = useState('')
+    const [codigoPropiedadsolicitud, setCodigopropiedadsolicitud] = useState('')
 
     let { id } = useParams();
 
@@ -48,11 +50,10 @@ export const Details = () => {
             numerocliente,
             correocliente,
             mensajecliente,
-            codigoPropiedad
+            codigoPropiedadsolicitud
         };
         await addDoc(customerCollection, clientenuevo);
-        alert('Propiedad ingresada correctamente');
-
+        Swal.fire("Mensaje enviado!");              
     };
 
     return (
@@ -82,7 +83,7 @@ export const Details = () => {
                         <br />
                         <input onChange={(e) => setCorreocliente(e.target.value)} type="email" placeholder="Correo" />
                         <br />
-                        <input onChange={(e) => setCodigopropiedad(e.target.value)} type="text" placeholder="Ingresar codigo de propiedad" />
+                        <input onChange={(e) => setCodigopropiedadsolicitud(e.target.value)} type="text" placeholder="Ingresar codigo de propiedad" />
                         <br />
                         <textarea onChange={(e) => setMensajecliente(e.target.value)} placeholder="Dejanos un mensaje"></textarea>
                         <br />

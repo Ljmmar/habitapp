@@ -4,7 +4,7 @@ const Projects = () => {
     return (
         <section>
             <Header />
-            <h1>En construccion </h1>
+            <h1>En construcción</h1>
         </section>
     )
 }

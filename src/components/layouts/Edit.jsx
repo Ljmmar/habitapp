@@ -2,6 +2,7 @@ import { dataBase } from "../database/config-firebase";
 import { collection, updateDoc, doc, getDoc } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import Swal from "sweetalert2";
 import Headeradmin from "../helpers/Headeradmin";
 
 
@@ -32,8 +33,26 @@ export const Edit = () => {
             parqueaderoPropiedad,
             descripcionPropiedad
         }
-        await updateDoc(propiedadCollection, propiedadNueva)
-        List('/list')
+
+        const result = await Swal.fire({
+            title: "Quieres guardar los cambios?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Guardar",
+            denyButtonText: `No guardar`,
+        });
+
+        if (result.isConfirmed) {
+            
+            await updateDoc(propiedadCollection, propiedadNueva);
+            List("/list");
+            Swal.fire("Registro guardado!", "", "satisfactoriamente");
+        } else if (result.isDenied) {
+            
+            Swal.fire("Los cambios no se guardaron", "", "info");
+        }
+        
+        
     }
 
     const getPropiedades = async (id) => {

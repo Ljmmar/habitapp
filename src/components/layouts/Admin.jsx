@@ -43,6 +43,7 @@ const Admin = () => {
               <li>
                 {customer.mensajecliente}
               </li>
+              
               <button onClick={() => { deletesolicitud(customer.id) }} type='buttom'>Eliminar</button>
             </ul>
           </section>

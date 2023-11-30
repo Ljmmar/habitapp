@@ -6,15 +6,14 @@ const Headeradmin = () => {
        <div className="logo">
                 <Link to={'/'}> <img src='./public/icons/logoH.png' alt="Logo" /></Link>
             </div>
-    <header>
-    
+    <header>    
       <div className='options'>
         <Link to='/admin'>Inicio</Link>
         <Link to='/list'>Listado Propiedades</Link>
         <Link to='/create'>Ingresar Propiedad</Link>
       </div>
       <div className='options'>
-      <Link to='/login'>Cerrar sesion</Link>
+      <Link to='/login'>Cerrar sesión</Link>
       </div>
     </header>
     </section>
